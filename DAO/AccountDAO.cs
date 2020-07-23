@@ -25,7 +25,7 @@ namespace DAO
         {
             List<Account> list = new List<Account>();
             string QUERY = "SELECT * FROM Account";
-            DataTable data = DataProvider.Instance.ExecuteQuery(QUERY);
+            DataTable data = DataProvider.GetInstance.ExecuteQuery(QUERY);
             foreach (DataRow item in data.Rows)
             {
                 Account e = new Account(item);
@@ -37,14 +37,14 @@ namespace DAO
         public bool CheckLogin(string Username, string Password)
         {
             string QUERY = "SELECT * FROM Account WHERE Username = @Username AND Password = @Password";
-            DataTable result = DataProvider.Instance.ExecuteQuery(QUERY, new object[] { Username, Password });
+            DataTable result = DataProvider.GetInstance.ExecuteQuery(QUERY, new object[] { Username, Password });
             return result.Rows.Count > 0;
         }
 
         public Account GetAccount(string Username, string Password)
         {
             string QUERY = "SELECT * FROM Account WHERE Username = @Username AND Password = @Password";
-            DataTable data = DataProvider.Instance.ExecuteQuery(QUERY, new object[] { Username, Password });
+            DataTable data = DataProvider.GetInstance.ExecuteQuery(QUERY, new object[] { Username, Password });
             foreach (DataRow e in data.Rows)
                 return new Account(e);
             return null;
@@ -53,20 +53,20 @@ namespace DAO
         public int Insert(string Username, string Password, Account.RoleType Role)
         {
             string query = "INSERT Account (Username, Password, Role) OUTPUT INSERTED.ID VALUES ( @username , @password , @role )";
-            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { Username, Password, (int)Role });
+            object result = DataProvider.GetInstance.ExecuteScalar(query, new object[] { Username, Password, (int)Role });
             return Convert.ToInt32(result);
         }
 
         public void Update(Account r)
         {
             string query = "UPDATE Account SET Password = @password , Role = @role WHERE Id = @Id ";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { r.Password, r.Role, r.Id });
+            int result = DataProvider.GetInstance.ExecuteNonQuery(query, new object[] { r.Password, r.Role, r.Id });
         }
 
         public void Delete(int AccountId)
         {
             string query = "DELETE FROM Account WHERE Id = @Id ";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { AccountId });
+            int result = DataProvider.GetInstance.ExecuteNonQuery(query, new object[] { AccountId });
         }
     }
 }
