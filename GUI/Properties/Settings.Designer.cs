@@ -32,5 +32,14 @@ namespace QLDiaDiemNhaHang.Properties {
                 return ((string)(this["QL_NhaHangConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("AIzaSyB4Nih7D62ododZuNtreXdAUY-07r1G1GE")]
+        public string Google_API_KEY {
+            get {
+                return ((string)(this["Google_API_KEY"]));
+            }
+        }
     }
 }

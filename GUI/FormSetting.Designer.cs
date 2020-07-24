@@ -47,7 +47,7 @@
             this.tabSetting.Controls.Add(this.tabSettingChangePassword);
             this.tabSetting.Controls.Add(this.tabPage2);
             this.tabSetting.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabSetting.Font = new System.Drawing.Font("Quicksand", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabSetting.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabSetting.Location = new System.Drawing.Point(0, 0);
             this.tabSetting.Name = "tabSetting";
             this.tabSetting.SelectedIndex = 0;
@@ -63,10 +63,10 @@
             this.tabSettingChangePassword.Controls.Add(this.label3);
             this.tabSettingChangePassword.Controls.Add(this.label2);
             this.tabSettingChangePassword.Controls.Add(this.label1);
-            this.tabSettingChangePassword.Location = new System.Drawing.Point(4, 57);
+            this.tabSettingChangePassword.Location = new System.Drawing.Point(4, 44);
             this.tabSettingChangePassword.Name = "tabSettingChangePassword";
             this.tabSettingChangePassword.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSettingChangePassword.Size = new System.Drawing.Size(1186, 484);
+            this.tabSettingChangePassword.Size = new System.Drawing.Size(1186, 497);
             this.tabSettingChangePassword.TabIndex = 0;
             this.tabSettingChangePassword.Text = "Đổi mật khẩu";
             this.tabSettingChangePassword.UseVisualStyleBackColor = true;
@@ -84,7 +84,7 @@
             this.btnChangePassword.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
             this.btnChangePassword.IconColor = System.Drawing.Color.White;
             this.btnChangePassword.IconSize = 32;
-            this.btnChangePassword.Location = new System.Drawing.Point(398, 339);
+            this.btnChangePassword.Location = new System.Drawing.Point(398, 345);
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Rotation = 0D;
             this.btnChangePassword.Size = new System.Drawing.Size(213, 45);
@@ -98,7 +98,7 @@
             // 
             this.txtRePass.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtRePass.Font = new System.Drawing.Font("Quicksand", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRePass.Location = new System.Drawing.Point(681, 229);
+            this.txtRePass.Location = new System.Drawing.Point(681, 235);
             this.txtRePass.Name = "txtRePass";
             this.txtRePass.PasswordChar = '*';
             this.txtRePass.Size = new System.Drawing.Size(337, 52);
@@ -108,7 +108,7 @@
             // 
             this.txtNewPass.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNewPass.Font = new System.Drawing.Font("Quicksand", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNewPass.Location = new System.Drawing.Point(681, 156);
+            this.txtNewPass.Location = new System.Drawing.Point(681, 162);
             this.txtNewPass.Name = "txtNewPass";
             this.txtNewPass.PasswordChar = '*';
             this.txtNewPass.Size = new System.Drawing.Size(337, 52);
@@ -118,7 +118,7 @@
             // 
             this.txtOldPass.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtOldPass.Font = new System.Drawing.Font("Quicksand", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOldPass.Location = new System.Drawing.Point(681, 84);
+            this.txtOldPass.Location = new System.Drawing.Point(681, 90);
             this.txtOldPass.Name = "txtOldPass";
             this.txtOldPass.PasswordChar = '*';
             this.txtOldPass.Size = new System.Drawing.Size(337, 52);
@@ -129,7 +129,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(193, 219);
+            this.label3.Location = new System.Drawing.Point(193, 225);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(271, 35);
             this.label3.TabIndex = 0;
@@ -140,7 +140,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(193, 146);
+            this.label2.Location = new System.Drawing.Point(193, 152);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(171, 35);
             this.label2.TabIndex = 0;
@@ -151,7 +151,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(193, 74);
+            this.label1.Location = new System.Drawing.Point(193, 80);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(156, 35);
             this.label1.TabIndex = 0;

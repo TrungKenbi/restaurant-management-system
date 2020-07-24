@@ -20,11 +20,18 @@ namespace DAO
 
         private RestaurantDAO() { }
 
-        public List<Restaurant> GetList()
+        public List<Restaurant> GetList(String keyword = null)
         {
+            string QUERY;
+            DataTable data;
             List<Restaurant> list = new List<Restaurant>();
-            string QUERY = "SELECT * FROM Restaurent";
-            DataTable data = DataProvider.GetInstance.ExecuteQuery(QUERY);
+            if (keyword != null) {
+                QUERY = "SELECT * FROM Restaurent WHERE Name LIKE @keyword";
+                data = DataProvider.GetInstance.ExecuteQuery(QUERY, new object[] { "%" + keyword + "%" });
+            } else {
+                QUERY = "SELECT * FROM Restaurent";
+                data = DataProvider.GetInstance.ExecuteQuery(QUERY);
+            }
             foreach (DataRow item in data.Rows)
             {
                 Restaurant e = new Restaurant(item);

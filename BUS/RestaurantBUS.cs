@@ -21,9 +21,9 @@ namespace BUS
 
         private RestaurantBUS() { }
 
-        public List<Restaurant> GetList()
+        public List<Restaurant> GetList(String keyword = null)
         {
-            return RestaurantDAO.Instance.GetList();
+            return RestaurantDAO.Instance.GetList(keyword);
         }
 
         public int Insert(string name, string description, string address, string email, string hotline)
