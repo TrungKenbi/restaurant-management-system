@@ -23,6 +23,8 @@ namespace DAO
             }
         }
 
+        
+
         private DataProvider() {
             string connectionString = ConfigurationManager
                 .ConnectionStrings["DefaultConnectionString"]
@@ -33,8 +35,21 @@ namespace DAO
 
         ~DataProvider()
         {
-            //if (this.connection != null)
-            //    this.connection.Close();
+            /*try
+            {
+                if (this.connection != null)
+                    this.connection.Close();
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                this.connection.Close();
+                this.connection.Dispose();
+                this.connection = null;
+            }*/
         }
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)

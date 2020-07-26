@@ -115,6 +115,7 @@
     <Reference Include="System.Data.SQLite.Linq, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.113.0\lib\net451\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="System.Device" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -170,6 +171,12 @@
     <Compile Include="FormRestaurantAddEdit.Designer.cs">
       <DependentUpon>FormRestaurantAddEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRestaurantMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRestaurantMap.Designer.cs">
+      <DependentUpon>FormRestaurantMap.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRestaurantAddEdit.resx">
       <DependentUpon>FormRestaurantAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRestaurantMap.resx">
+      <DependentUpon>FormRestaurantMap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSearch.resx">
       <DependentUpon>FormSearch.cs</DependentUpon>

@@ -104,41 +104,8 @@ namespace GUI
             if (this.childForm != null)
                 this.childForm.Close();
 
-            this.childForm = new FormSearchResult();
-
-
-            string MAP_URL = Application.StartupPath + "\\maps\\index.html";
-            string MAP_RENDER_URL = Application.StartupPath + "\\maps\\render.html";
-
-            string marker = "marker.png";
-            string image = "image.png";
-            RenderFileMap(MAP_URL, "10.9805088", "106.6722679", selectedRestaurant.Name, "hihi", marker, image, MAP_RENDER_URL);
-
-
-            this.childForm.LoadMapData(Application.StartupPath + "\\maps\\test.html");
+            this.childForm = new FormSearchResult(selectedRestaurant);
             this.childForm.Show();
-
-
-            //MessageBox.Show(selectedRestaurant.Description);
-        }
-
-        public static void RenderFileMap(string filename, string la, string lo, string country, string city, string marker, string image, string path)
-        {
-            if (File.Exists(filename))
-            {
-                StreamReader reader = new StreamReader(filename);
-                string readFile = reader.ReadToEnd();
-                readFile = readFile.Replace("[la]", la);
-                readFile = readFile.Replace("[lo]", lo);
-                readFile = readFile.Replace("[country]", country);
-                readFile = readFile.Replace("[city]", city);
-                readFile = readFile.Replace("[image]", image);
-                readFile = readFile.Replace("[marker]", marker);
-                reader.Close();
-                StreamWriter writer = new StreamWriter(path);
-                writer.Write(readFile);
-                writer.Close();
-            }
         }
     }
 }

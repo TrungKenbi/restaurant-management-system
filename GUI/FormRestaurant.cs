@@ -34,12 +34,13 @@ namespace QLDiaDiemNhaHang
             // Load data from database to data grid view
             drgvRestaurant.DataSource = RestaurantBUS.Instance.GetList();
             drgvRestaurant.Columns["Id"].Visible = false;
-            drgvRestaurant.Columns["Id"].HeaderText = "#";
             drgvRestaurant.Columns["Name"].HeaderText = "Nhà Hàng";
             drgvRestaurant.Columns["Description"].HeaderText = "Mô Tả";
             drgvRestaurant.Columns["Address"].HeaderText = "Địa Chỉ";
             drgvRestaurant.Columns["Email"].HeaderText = "Email";
             drgvRestaurant.Columns["Hotline"].HeaderText = "Hotline";
+            drgvRestaurant.Columns["Lat"].Visible = false;
+            drgvRestaurant.Columns["Lng"].Visible = false;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

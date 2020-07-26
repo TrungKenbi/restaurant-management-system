@@ -8,28 +8,23 @@ using System.Threading.Tasks;
 
 namespace DAO
 {
-    public class RestaurantDAO
+    public class RestaurantDAO : BaseDAO<RestaurantDAO, Restaurant>
     {
-        private static RestaurantDAO instance;
-
-        public static RestaurantDAO Instance
+        public override List<Restaurant> GetList()
         {
-            get { if (instance == null) instance = new RestaurantDAO(); return instance; }
-            private set { instance = value; }
+            return this.GetList(null);
         }
 
-        private RestaurantDAO() { }
-
-        public List<Restaurant> GetList(String keyword = null)
+        public List<Restaurant> GetList(String keyword)
         {
             string QUERY;
             DataTable data;
             List<Restaurant> list = new List<Restaurant>();
             if (keyword != null) {
-                QUERY = "SELECT * FROM Restaurent WHERE Name LIKE @keyword";
+                QUERY = "SELECT * FROM Restaurant WHERE Name LIKE @keyword";
                 data = DataProvider.GetInstance.ExecuteQuery(QUERY, new object[] { "%" + keyword + "%" });
             } else {
-                QUERY = "SELECT * FROM Restaurent";
+                QUERY = "SELECT * FROM Restaurant";
                 data = DataProvider.GetInstance.ExecuteQuery(QUERY);
             }
             foreach (DataRow item in data.Rows)
@@ -40,22 +35,22 @@ namespace DAO
             return list;
         }
 
-        public int Insert(string name, string description, string address, string email, string hotline)
+        public int Insert(string name, string description, string address, string email, string hotline, double lat, double lng)
         {
-            string query = "INSERT Restaurent (Name, Description, Address, Email, Hotline) OUTPUT INSERTED.ID VALUES ( @name , @description , @address , @email , @hotline )";
-            object result = DataProvider.GetInstance.ExecuteScalar(query, new object[] { name, description, address, email, hotline });
+            string query = "INSERT Restaurant (Name, Description, Address, Email, Hotline, Lat, Lng) OUTPUT INSERTED.ID VALUES ( @name , @description , @address , @email , @hotline , @Lat , @Lng )";
+            object result = DataProvider.GetInstance.ExecuteScalar(query, new object[] { name, description, address, email, hotline, lat, lng });
             return Convert.ToInt32(result);
         }
 
-        public void Update(Restaurant r)
+        public override void Update(Restaurant r)
         {
-            string query ="UPDATE Restaurent SET Name = @name , Description = @description , Address = @address , Email = @email , Hotline = @hotline WHERE Id = @Id ";
-            int result = DataProvider.GetInstance.ExecuteNonQuery(query, new object[] { r.Name, r.Description, r.Address, r.Email, r.Hotline, r.Id });
+            string query ="UPDATE Restaurant SET Name = @name , Description = @description , Address = @address , Email = @email , Hotline = @hotline , Lat = @lat , Lng = @lng WHERE Id = @id ";
+            int result = DataProvider.GetInstance.ExecuteNonQuery(query, new object[] { r.Name, r.Description, r.Address, r.Email, r.Hotline, r.Lat, r.Lng, r.Id });
         }
 
-        public void Delete(int RestaurantId)
+        public override void Delete(int RestaurantId)
         {
-            string query = "DELETE FROM Restaurent WHERE Id = @Id ";
+            string query = "DELETE FROM Restaurant WHERE Id = @Id ";
             int result = DataProvider.GetInstance.ExecuteNonQuery(query, new object[] { RestaurantId });
         }
     }

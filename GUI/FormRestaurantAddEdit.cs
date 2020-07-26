@@ -18,6 +18,9 @@ namespace QLDiaDiemNhaHang
         private FormRestaurant frmParent;
         private ACTION_TYPE action;
         private Restaurant restaurant;
+
+        private double tmpLat = 10.9806545;
+        private double tmpLng = 106.672259;
         
         public enum ACTION_TYPE { VIEW, CREATE, EDIT }
 
@@ -76,6 +79,19 @@ namespace QLDiaDiemNhaHang
             txtHotline.Enabled = false;
             rtbDesc.Enabled = false;
             btnAction.Visible = false;
+            btnMap.Enabled = false;
+        }
+
+        public void SetPostionLatLng(double lat, double lng)
+        {
+            this.tmpLat = lat;
+            this.tmpLng = lng;
+
+            if (this.restaurant != null)
+            {
+                this.restaurant.Lat = lat;
+                this.restaurant.Lng = lng;
+            }
         }
 
         private void btnAction_Click(object sender, EventArgs e)
@@ -88,7 +104,7 @@ namespace QLDiaDiemNhaHang
                     string address = txtAddress.Text;
                     string email = txtEmail.Text;
                     string hotline = txtHotline.Text;
-                    int id = RestaurantBUS.Instance.Insert(name, desc, address, email, hotline);
+                    int id = RestaurantBUS.Instance.Insert(name, desc, address, email, hotline, this.tmpLat, this.tmpLng);
                     frmParent.LoadRestaurantData();
                     MessageBox.Show("Thêm nhà hàng thành công !");
                     break;
@@ -119,6 +135,12 @@ namespace QLDiaDiemNhaHang
 
                     break;
             }
+        }
+
+        private void btnMap_Click(object sender, EventArgs e)
+        {
+            FormRestaurantMap frmMap = new FormRestaurantMap(this, this.restaurant);
+            frmMap.ShowDialog();
         }
     }
 }

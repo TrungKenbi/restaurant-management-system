@@ -9,19 +9,9 @@ using System.Threading.Tasks;
 
 namespace DAO
 {
-    public class AccountDAO
+    public class AccountDAO : BaseDAO<AccountDAO, Account>
     {
-        private static AccountDAO instance;
-
-        public static AccountDAO Instance
-        {
-            get { if (instance == null) instance = new AccountDAO(); return instance; }
-            private set { instance = value; }
-        }
-
-        private AccountDAO() { }
-
-        public List<Account> GetList()
+        public override List<Account> GetList()
         {
             List<Account> list = new List<Account>();
             string QUERY = "SELECT * FROM Account";
@@ -57,13 +47,13 @@ namespace DAO
             return Convert.ToInt32(result);
         }
 
-        public void Update(Account r)
+        public override void Update(Account r)
         {
             string query = "UPDATE Account SET Password = @password , Role = @role WHERE Id = @Id ";
             int result = DataProvider.GetInstance.ExecuteNonQuery(query, new object[] { r.Password, r.Role, r.Id });
         }
 
-        public void Delete(int AccountId)
+        public override void Delete(int AccountId)
         {
             string query = "DELETE FROM Account WHERE Id = @Id ";
             int result = DataProvider.GetInstance.ExecuteNonQuery(query, new object[] { AccountId });

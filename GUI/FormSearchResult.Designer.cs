@@ -29,14 +29,20 @@
         private void InitializeComponent()
         {
             this.mainMap = new GMap.NET.WindowsForms.GMapControl();
-            this.txtLat = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtLng = new System.Windows.Forms.TextBox();
+            this.btnFindPath = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.rtbDesc = new System.Windows.Forms.RichTextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblHotline = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.btnClose = new FontAwesome.Sharp.IconButton();
             this.tableLayoutPanel1.SuspendLayout();
+            this.btnFindPath.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainMap
@@ -48,7 +54,7 @@
             this.mainMap.GrayScaleMode = false;
             this.mainMap.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.mainMap.LevelsKeepInMemory = 5;
-            this.mainMap.Location = new System.Drawing.Point(3, 3);
+            this.mainMap.Location = new System.Drawing.Point(3, 28);
             this.mainMap.MarkersEnabled = true;
             this.mainMap.MaxZoom = 2;
             this.mainMap.MinZoom = 2;
@@ -62,98 +68,167 @@
             this.mainMap.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.mainMap.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.mainMap.ShowTileGridLines = false;
-            this.mainMap.Size = new System.Drawing.Size(831, 608);
+            this.mainMap.Size = new System.Drawing.Size(689, 516);
             this.mainMap.TabIndex = 1;
             this.mainMap.Zoom = 0D;
             this.mainMap.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mainMap_MouseDown);
             this.mainMap.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mainMap_MouseMove);
             // 
-            // txtLat
-            // 
-            this.txtLat.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtLat.Location = new System.Drawing.Point(972, 53);
-            this.txtLat.Name = "txtLat";
-            this.txtLat.Size = new System.Drawing.Size(235, 26);
-            this.txtLat.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(902, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 20);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Vĩ độ:";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(902, 104);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Kinh độ:";
-            // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.13008F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.86992F));
-            this.tableLayoutPanel1.Controls.Add(this.mainMap, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.79012F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.20988F));
+            this.tableLayoutPanel1.Controls.Add(this.btnFindPath, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnClose, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1230, 614);
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1620, 614);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
-            // txtLng
+            // btnFindPath
             // 
-            this.txtLng.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtLng.Location = new System.Drawing.Point(132, 98);
-            this.txtLng.Name = "txtLng";
-            this.txtLng.Size = new System.Drawing.Size(235, 26);
-            this.txtLng.TabIndex = 2;
+            this.btnFindPath.Controls.Add(this.mainMap);
+            this.btnFindPath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFindPath.Font = new System.Drawing.Font("Quicksand", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFindPath.Location = new System.Drawing.Point(922, 64);
+            this.btnFindPath.Name = "btnFindPath";
+            this.btnFindPath.Size = new System.Drawing.Size(695, 547);
+            this.btnFindPath.TabIndex = 3;
+            this.btnFindPath.TabStop = false;
+            this.btnFindPath.Text = "Bản đồ chỉ đường";
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txtLng);
-            this.panel1.Location = new System.Drawing.Point(840, 3);
+            this.panel1.Controls.Add(this.rtbDesc);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 64);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(387, 608);
+            this.panel1.Size = new System.Drawing.Size(913, 547);
             this.panel1.TabIndex = 2;
+            // 
+            // rtbDesc
+            // 
+            this.rtbDesc.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.rtbDesc.Font = new System.Drawing.Font("Quicksand", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbDesc.Location = new System.Drawing.Point(0, 249);
+            this.rtbDesc.Name = "rtbDesc";
+            this.rtbDesc.Size = new System.Drawing.Size(913, 298);
+            this.rtbDesc.TabIndex = 1;
+            this.rtbDesc.Text = "";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lblHotline);
+            this.groupBox1.Controls.Add(this.lblName);
+            this.groupBox1.Controls.Add(this.lblAddress);
+            this.groupBox1.Controls.Add(this.lblEmail);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Font = new System.Drawing.Font("Quicksand", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(913, 547);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Thông Tin Nhà Hàng";
+            // 
+            // lblHotline
+            // 
+            this.lblHotline.AutoSize = true;
+            this.lblHotline.Font = new System.Drawing.Font("Quicksand", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHotline.Location = new System.Drawing.Point(25, 195);
+            this.lblHotline.Name = "lblHotline";
+            this.lblHotline.Size = new System.Drawing.Size(196, 30);
+            this.lblHotline.TabIndex = 0;
+            this.lblHotline.Text = "[RestaurantHotline]";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(24, 42);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(234, 35);
+            this.lblName.TabIndex = 0;
+            this.lblName.Text = "[RestaurantName]";
+            // 
+            // lblAddress
+            // 
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Font = new System.Drawing.Font("Quicksand", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.Location = new System.Drawing.Point(25, 102);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(205, 30);
+            this.lblAddress.TabIndex = 0;
+            this.lblAddress.Text = "[RestaurantAddress]";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Quicksand", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(25, 149);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(181, 30);
+            this.lblEmail.TabIndex = 0;
+            this.lblEmail.Text = "[RestaurantEmail]";
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnClose.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
+            this.btnClose.IconColor = System.Drawing.Color.DarkOrange;
+            this.btnClose.IconSize = 64;
+            this.btnClose.Location = new System.Drawing.Point(1553, 3);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Rotation = 0D;
+            this.btnClose.Size = new System.Drawing.Size(64, 55);
+            this.btnClose.TabIndex = 8;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // FormSearchResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1230, 614);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtLat);
+            this.ClientSize = new System.Drawing.Size(1620, 614);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FormSearchResult";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormSearchResult";
             this.Load += new System.EventHandler(this.FormSearchResult_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.btnFindPath.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
         private GMap.NET.WindowsForms.GMapControl mainMap;
-        private System.Windows.Forms.TextBox txtLat;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtLng;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblAddress;
+        private System.Windows.Forms.Label lblHotline;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.RichTextBox rtbDesc;
+        private FontAwesome.Sharp.IconButton btnClose;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox btnFindPath;
     }
 }
