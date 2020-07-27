@@ -26,9 +26,9 @@ namespace BUS
             return RestaurantDAO.Instance.GetList(keyword);
         }
 
-        public int Insert(string name, string description, string address, string email, string hotline, double lat = 10.9806545, double lng = 106.672259)
+        public int Insert(string name, string description, string address, string email, string hotline, double lat, double lng, int acreage, int capacity, int star, double rating)
         {
-            return RestaurantDAO.Instance.Insert(name, description, address, email, hotline, lat, lng);
+            return RestaurantDAO.Instance.Insert(name, description, address, email, hotline, lat, lng, acreage, capacity, star, rating);
         }
 
         public void Update(Restaurant r)

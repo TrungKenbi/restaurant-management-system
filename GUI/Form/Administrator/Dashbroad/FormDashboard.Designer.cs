@@ -34,8 +34,12 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblNumEmployer = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblNumFood = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -108,6 +112,41 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Số lượng:";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.lblNumFood);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.groupBox3.Location = new System.Drawing.Point(12, 280);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(415, 243);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Ẩm Thực";
+            // 
+            // lblNumFood
+            // 
+            this.lblNumFood.AutoSize = true;
+            this.lblNumFood.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumFood.Location = new System.Drawing.Point(180, 55);
+            this.lblNumFood.Name = "lblNumFood";
+            this.lblNumFood.Size = new System.Drawing.Size(39, 35);
+            this.lblNumFood.TabIndex = 1;
+            this.lblNumFood.Text = "10";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Quicksand", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label3.Location = new System.Drawing.Point(30, 55);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(97, 30);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Số lượng:";
+            // 
             // FormDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -115,6 +154,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(34)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(891, 578);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormDashboard";
             this.Text = "FormDashboard";
@@ -123,6 +163,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -135,5 +177,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblNumEmployer;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label lblNumFood;
+        private System.Windows.Forms.Label label3;
     }
 }

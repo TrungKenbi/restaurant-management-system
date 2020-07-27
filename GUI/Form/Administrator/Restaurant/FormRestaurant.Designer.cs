@@ -47,6 +47,7 @@
             this.drgvRestaurant.Name = "drgvRestaurant";
             this.drgvRestaurant.RowHeadersWidth = 62;
             this.drgvRestaurant.RowTemplate.Height = 28;
+            this.drgvRestaurant.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.drgvRestaurant.Size = new System.Drawing.Size(746, 319);
             this.drgvRestaurant.TabIndex = 2;
             this.drgvRestaurant.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drgvRestaurant_CellDoubleClick);

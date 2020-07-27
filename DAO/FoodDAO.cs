@@ -24,23 +24,36 @@ namespace DAO
             return list;
         }
 
-        public int Insert(string Name, string Đescription)
+        public int Insert(string Name, string Description)
         {
-            string query = "INSERT Food (Name, Description) OUTPUT INSERTED.ID VALUES ( @name , @description )";
-            object result = DataProvider.GetInstance.ExecuteScalar(query, new object[] { Name, Đescription });
+            string query = "INSERT Food (Name, Description) OUTPUT INSERTED.Id VALUES ( @name , @description )";
+            object result = DataProvider.GetInstance.ExecuteScalar(query, new object[] { Name, Description });
             return Convert.ToInt32(result);
         }
 
         public override void Update(Food r)
         {
-            //string query = "UPDATE Food SET Password = @password , Role = @role WHERE Id = @Id ";
-            //int result = DataProvider.GetInstance.ExecuteNonQuery(query, new object[] { r.Password, r.Role, r.Id });
+            string query = "UPDATE Food SET Name = @name , Description = @desc WHERE Id = @Id ";
+            int result = DataProvider.GetInstance.ExecuteNonQuery(query, new object[] { r.Name, r.Description, r.Id });
         }
 
         public override void Delete(int FoodId)
         {
-            //string query = "DELETE FROM Food WHERE Id = @Id ";
-            //int result = DataProvider.GetInstance.ExecuteNonQuery(query, new object[] { FoodId });
+            string query = "DELETE FROM Food WHERE Id = @Id ";
+            int result = DataProvider.GetInstance.ExecuteNonQuery(query, new object[] { FoodId });
+        }
+
+        public void InsertToRestaurant(int RestaurantId, int FoodId, int Price)
+        {
+            string query = "INSERT RestaurantFood (RestaurantId, FoodId, Price) VALUES ( @resId , @fId , @price )";
+            object result = DataProvider.GetInstance.ExecuteScalar(query, new object[] { RestaurantId, FoodId, Price });
+        }
+
+        public int GetNumFoodInRestaurant(int resId)
+        {
+            string QUERY = "SELECT * FROM RestaurantFood WHERE RestaurantId = " + resId;
+            DataTable data = DataProvider.GetInstance.ExecuteQuery(QUERY);
+            return data.Rows.Count;
         }
     }
 }

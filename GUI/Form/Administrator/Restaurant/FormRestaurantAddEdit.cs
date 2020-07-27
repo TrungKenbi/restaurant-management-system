@@ -1,13 +1,6 @@
 ﻿using BUS;
 using DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLDiaDiemNhaHang
@@ -68,6 +61,12 @@ namespace QLDiaDiemNhaHang
             txtEmail.Text = r.Email;
             txtHotline.Text = r.Hotline;
             rtbDesc.Text = r.Description;
+
+            txtAcreage.Text = r.Acreage.ToString();
+            txtCapacity.Text = r.Capacity.ToString();
+            txtStar.Text = r.Star.ToString();
+            txtRating.Text = r.Rating.ToString();
+
             this.restaurant = r;
         }
 
@@ -79,7 +78,7 @@ namespace QLDiaDiemNhaHang
             txtHotline.Enabled = false;
             rtbDesc.Enabled = false;
             btnAction.Visible = false;
-            btnMap.Enabled = false;
+            //btnMap.Enabled = false;
         }
 
         public void SetPostionLatLng(double lat, double lng)
@@ -104,7 +103,13 @@ namespace QLDiaDiemNhaHang
                     string address = txtAddress.Text;
                     string email = txtEmail.Text;
                     string hotline = txtHotline.Text;
-                    int id = RestaurantBUS.Instance.Insert(name, desc, address, email, hotline, this.tmpLat, this.tmpLng);
+
+                    int acreage = Convert.ToInt32(txtAcreage.Text);
+                    int capacity = Convert.ToInt32(txtCapacity.Text);
+                    int star = Convert.ToInt32(txtStar.Text);
+                    double rating = Convert.ToDouble(txtRating.Text);
+
+                    int id = RestaurantBUS.Instance.Insert(name, desc, address, email, hotline, this.tmpLat, this.tmpLng, acreage, capacity, star, rating);
                     frmParent.LoadRestaurantData();
                     MessageBox.Show("Thêm nhà hàng thành công !");
                     break;
@@ -112,16 +117,16 @@ namespace QLDiaDiemNhaHang
 
                     try
                     {
-                        //if (this.restaurant.Name != txtName.Text)
-                            this.restaurant.Name = txtName.Text;
-                        //if (this.restaurant.Description != txtName.Text)
-                            this.restaurant.Description = rtbDesc.Text;
-                        //if (this.restaurant.Address != txtName.Text)
-                            this.restaurant.Address = txtAddress.Text;
-                        //if (this.restaurant.Email != txtName.Text)
-                            this.restaurant.Email = txtEmail.Text;
-                        //if (this.restaurant.Hotline != txtName.Text)
-                            this.restaurant.Hotline = txtHotline.Text;
+                        this.restaurant.Name = txtName.Text;
+                        this.restaurant.Description = rtbDesc.Text;
+                        this.restaurant.Address = txtAddress.Text;
+                        this.restaurant.Email = txtEmail.Text;
+                        this.restaurant.Hotline = txtHotline.Text;
+
+                        this.restaurant.Acreage = Convert.ToInt32(txtAcreage.Text);
+                        this.restaurant.Capacity = Convert.ToInt32(txtCapacity.Text);
+                        this.restaurant.Star = Convert.ToInt32(txtStar.Text);
+                        this.restaurant.Rating = Convert.ToDouble(txtRating.Text);
 
                         RestaurantBUS.Instance.Update(this.restaurant);
                         frmParent.LoadRestaurantData();

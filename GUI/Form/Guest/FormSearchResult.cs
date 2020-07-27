@@ -1,4 +1,5 @@
-﻿using DTO;
+﻿using BUS;
+using DTO;
 using GMap.NET;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
@@ -17,6 +18,7 @@ namespace QLDiaDiemNhaHang
             this.restaurant = _restaurant;
             InitializeComponent();
             //this.FormBorderStyle = FormBorderStyle.None;
+            this.restaurant.NumFood = FoodBUS.Instance.GetNumFoodInRestaurant(this.restaurant.Id);
         }
 
         private void FormSearchResult_Load(object sender, EventArgs e)
@@ -31,6 +33,8 @@ namespace QLDiaDiemNhaHang
             this.lblCapacity.Text = String.Format("Sức chứa: {0} người", this.restaurant.Capacity);
             this.lblStar.Text = String.Format("Chất lượng: {0} sao", this.restaurant.Star);
             this.lblRating.Text = String.Format("Đánh giá: {0}/5", this.restaurant.Rating);
+
+            this.lblNumFood.Text = String.Format("Số món ăn: {0} món", this.restaurant.NumFood);
 
 
             GMapProviders.GoogleMap.ApiKey = @Properties.Settings.Default.Google_API_KEY;

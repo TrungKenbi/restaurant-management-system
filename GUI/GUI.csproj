@@ -129,58 +129,70 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormDashboard.cs">
+    <Compile Include="Form\Administrator\Dashbroad\FormDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDashboard.Designer.cs">
+    <Compile Include="Form\Administrator\Dashbroad\FormDashboard.Designer.cs">
       <DependentUpon>FormDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormEmployer.cs">
+    <Compile Include="Form\Administrator\Employer\FormEmployer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEmployer.Designer.cs">
+    <Compile Include="Form\Administrator\Employer\FormEmployer.Designer.cs">
       <DependentUpon>FormEmployer.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormEmployerAddEdit.cs">
+    <Compile Include="Form\Administrator\Employer\FormEmployerAddEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEmployerAddEdit.Designer.cs">
+    <Compile Include="Form\Administrator\Employer\FormEmployerAddEdit.Designer.cs">
       <DependentUpon>FormEmployerAddEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormFood.cs">
+    <Compile Include="Form\Administrator\Food\FormFood.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormFood.Designer.cs">
+    <Compile Include="Form\Administrator\Food\FormFood.Designer.cs">
       <DependentUpon>FormFood.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLogin.cs">
+    <Compile Include="Form\Administrator\Food\FormFoodAddEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLogin.Designer.cs">
+    <Compile Include="Form\Administrator\Food\FormFoodAddEdit.Designer.cs">
+      <DependentUpon>FormFoodAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Administrator\Food\FormFoodToRestaurant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Administrator\Food\FormFoodToRestaurant.Designer.cs">
+      <DependentUpon>FormFoodToRestaurant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Administrator\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Administrator\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormManagement.cs">
+    <Compile Include="Form\Administrator\FormManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormManagement.Designer.cs">
+    <Compile Include="Form\Administrator\FormManagement.Designer.cs">
       <DependentUpon>FormManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRestaurant.cs">
+    <Compile Include="Form\Administrator\Restaurant\FormRestaurant.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRestaurant.Designer.cs">
+    <Compile Include="Form\Administrator\Restaurant\FormRestaurant.Designer.cs">
       <DependentUpon>FormRestaurant.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRestaurantAddEdit.cs">
+    <Compile Include="Form\Administrator\Restaurant\FormRestaurantAddEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRestaurantAddEdit.Designer.cs">
+    <Compile Include="Form\Administrator\Restaurant\FormRestaurantAddEdit.Designer.cs">
       <DependentUpon>FormRestaurantAddEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRestaurantMap.cs">
+    <Compile Include="Form\Administrator\Restaurant\FormRestaurantMap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRestaurantMap.Designer.cs">
+    <Compile Include="Form\Administrator\Restaurant\FormRestaurantMap.Designer.cs">
       <DependentUpon>FormRestaurantMap.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Guest\FormSearch.cs">
@@ -195,45 +207,46 @@
     <Compile Include="Form\Guest\FormSearchResult.Designer.cs">
       <DependentUpon>FormSearchResult.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSetting.cs">
+    <Compile Include="Form\Administrator\Setting\FormSetting.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSetting.Designer.cs">
+    <Compile Include="Form\Administrator\Setting\FormSetting.Designer.cs">
       <DependentUpon>FormSetting.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QL_NhaHangDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QL_NhaHangDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Settings.cs" />
-    <EmbeddedResource Include="FormDashboard.resx">
+    <EmbeddedResource Include="Form\Administrator\Dashbroad\FormDashboard.resx">
       <DependentUpon>FormDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormEmployer.resx">
+    <EmbeddedResource Include="Form\Administrator\Employer\FormEmployer.resx">
       <DependentUpon>FormEmployer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormEmployerAddEdit.resx">
+    <EmbeddedResource Include="Form\Administrator\Employer\FormEmployerAddEdit.resx">
       <DependentUpon>FormEmployerAddEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormFood.resx">
+    <EmbeddedResource Include="Form\Administrator\Food\FormFood.resx">
       <DependentUpon>FormFood.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLogin.resx">
+    <EmbeddedResource Include="Form\Administrator\Food\FormFoodAddEdit.resx">
+      <DependentUpon>FormFoodAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Administrator\Food\FormFoodToRestaurant.resx">
+      <DependentUpon>FormFoodToRestaurant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Administrator\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormManagement.resx">
+    <EmbeddedResource Include="Form\Administrator\FormManagement.resx">
       <DependentUpon>FormManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRestaurant.resx">
+    <EmbeddedResource Include="Form\Administrator\Restaurant\FormRestaurant.resx">
       <DependentUpon>FormRestaurant.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRestaurantAddEdit.resx">
+    <EmbeddedResource Include="Form\Administrator\Restaurant\FormRestaurantAddEdit.resx">
       <DependentUpon>FormRestaurantAddEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRestaurantMap.resx">
+    <EmbeddedResource Include="Form\Administrator\Restaurant\FormRestaurantMap.resx">
       <DependentUpon>FormRestaurantMap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Guest\FormSearch.resx">
@@ -242,7 +255,7 @@
     <EmbeddedResource Include="Form\Guest\FormSearchResult.resx">
       <DependentUpon>FormSearchResult.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSetting.resx">
+    <EmbeddedResource Include="Form\Administrator\Setting\FormSetting.resx">
       <DependentUpon>FormSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -270,17 +283,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="QL_NhaHangDataSet.xsc">
-      <DependentUpon>QL_NhaHangDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QL_NhaHangDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QL_NhaHangDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QL_NhaHangDataSet.xss">
-      <DependentUpon>QL_NhaHangDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Resources\2048x1536.png" />
   </ItemGroup>
   <ItemGroup>
@@ -314,9 +316,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Form\Administrator\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

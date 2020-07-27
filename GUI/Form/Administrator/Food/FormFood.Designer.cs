@@ -32,6 +32,7 @@
             this.btnEdit = new FontAwesome.Sharp.IconButton();
             this.btnDelete = new FontAwesome.Sharp.IconButton();
             this.btnAdd = new FontAwesome.Sharp.IconButton();
+            this.btnToRestaurant = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.drgvFood)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,6 +48,7 @@
             this.drgvFood.Name = "drgvFood";
             this.drgvFood.RowHeadersWidth = 62;
             this.drgvFood.RowTemplate.Height = 28;
+            this.drgvFood.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.drgvFood.Size = new System.Drawing.Size(746, 319);
             this.drgvFood.TabIndex = 6;
             this.drgvFood.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drgvFood_CellDoubleClick);
@@ -119,6 +121,29 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // btnToRestaurant
+            // 
+            this.btnToRestaurant.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnToRestaurant.AutoSize = true;
+            this.btnToRestaurant.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnToRestaurant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btnToRestaurant.FlatAppearance.BorderSize = 0;
+            this.btnToRestaurant.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnToRestaurant.Font = new System.Drawing.Font("Quicksand", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnToRestaurant.ForeColor = System.Drawing.Color.White;
+            this.btnToRestaurant.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnToRestaurant.IconColor = System.Drawing.Color.White;
+            this.btnToRestaurant.IconSize = 32;
+            this.btnToRestaurant.Location = new System.Drawing.Point(243, 32);
+            this.btnToRestaurant.Name = "btnToRestaurant";
+            this.btnToRestaurant.Rotation = 0D;
+            this.btnToRestaurant.Size = new System.Drawing.Size(231, 40);
+            this.btnToRestaurant.TabIndex = 5;
+            this.btnToRestaurant.Text = "Đưa vào nhà hàng";
+            this.btnToRestaurant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnToRestaurant.UseVisualStyleBackColor = false;
+            this.btnToRestaurant.Click += new System.EventHandler(this.btnToRestaurant_Click);
+            // 
             // FormFood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -128,6 +153,7 @@
             this.Controls.Add(this.drgvFood);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnToRestaurant);
             this.Controls.Add(this.btnAdd);
             this.Name = "FormFood";
             this.Text = "FormFood";
@@ -144,5 +170,6 @@
         private FontAwesome.Sharp.IconButton btnEdit;
         private FontAwesome.Sharp.IconButton btnDelete;
         private FontAwesome.Sharp.IconButton btnAdd;
+        private FontAwesome.Sharp.IconButton btnToRestaurant;
     }
 }

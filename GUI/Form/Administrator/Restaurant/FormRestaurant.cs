@@ -39,6 +39,10 @@ namespace QLDiaDiemNhaHang
             drgvRestaurant.Columns["Address"].HeaderText = "Địa Chỉ";
             drgvRestaurant.Columns["Email"].HeaderText = "Email";
             drgvRestaurant.Columns["Hotline"].HeaderText = "Hotline";
+            drgvRestaurant.Columns["Acreage"].HeaderText = "Diện tích";
+            drgvRestaurant.Columns["Capacity"].HeaderText = "Sức chứa";
+            drgvRestaurant.Columns["Star"].HeaderText = "Sao";
+            drgvRestaurant.Columns["Rating"].HeaderText = "Đánh giá";
             drgvRestaurant.Columns["Lat"].Visible = false;
             drgvRestaurant.Columns["Lng"].Visible = false;
         }

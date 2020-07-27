@@ -1,14 +1,6 @@
 ﻿using DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -22,22 +14,20 @@ namespace GUI
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            bool debugMode = true;
+            if (QLDiaDiemNhaHang.Properties.Settings.Default.Username != String.Empty)
+                txtUsername.Text = QLDiaDiemNhaHang.Properties.Settings.Default.Username;
+            if (QLDiaDiemNhaHang.Properties.Settings.Default.Password != String.Empty)
+                txtPassword.Text = QLDiaDiemNhaHang.Properties.Settings.Default.Password;
 
-            if (debugMode)
-            {
-                txtUsername.Text = "trungkenbi";
-                txtPassword.Text = "123456";
-                cbxRemember.Checked = true;
-            }
-
+            cbxRemember.Checked = true;
             lblMessage.Hide();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            String username = txtUsername.Text;
-            String password = txtPassword.Text;
+            String username = txtUsername.Text.Trim();
+            String password = txtPassword.Text.Trim();
+            bool isRemember = cbxRemember.Checked;
 
             Account account = BUS.AccountBUS.Instance.GetAccount(username, password);
             if (account != null)
@@ -45,6 +35,18 @@ namespace GUI
                 FormManagement frmMng = new FormManagement(account);
                 frmMng.Show();
                 this.Hide();
+
+                if (isRemember)
+                {
+                    QLDiaDiemNhaHang.Properties.Settings.Default.Username = username;
+                    QLDiaDiemNhaHang.Properties.Settings.Default.Password = password;
+                } else
+                {
+                    QLDiaDiemNhaHang.Properties.Settings.Default.Username = String.Empty;
+                    QLDiaDiemNhaHang.Properties.Settings.Default.Password = String.Empty;
+                }
+
+                QLDiaDiemNhaHang.Properties.Settings.Default.Save();
             } else
             {
                 lblMessage.Show();

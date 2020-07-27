@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRestaurantMap));
             this.mainMap = new GMap.NET.WindowsForms.GMapControl();
             this.SuspendLayout();
             // 
@@ -65,8 +66,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.mainMap);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormRestaurantMap";
-            this.Text = "FormRestaurantMap";
+            this.Text = "Chọn vị trí nhà hàng trên bản đồ";
             this.Load += new System.EventHandler(this.FormRestaurantMap_Load);
             this.ResumeLayout(false);
 

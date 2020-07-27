@@ -22,6 +22,7 @@ namespace QLDiaDiemNhaHang
         {
             lblNumRestaurant.Text = RestaurantBUS.Instance.GetList().Count.ToString();
             lblNumEmployer.Text = AccountBUS.Instance.GetList().Count.ToString();
+            lblNumFood.Text = FoodBUS.Instance.GetList().Count.ToString();
         }
     }
 }
