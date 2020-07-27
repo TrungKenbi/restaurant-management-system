@@ -72,7 +72,6 @@
             this.mainMap.TabIndex = 1;
             this.mainMap.Zoom = 0D;
             this.mainMap.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mainMap_MouseDown);
-            this.mainMap.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mainMap_MouseMove);
             // 
             // tableLayoutPanel1
             // 

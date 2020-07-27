@@ -146,6 +146,11 @@ namespace GUI
             OpenChildForm(new FormRestaurant());
         }
 
+        private void btnFood_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color4);
+            OpenChildForm(new FormRestaurant());
+        }
 
         private void btnEmployer_Click(object sender, EventArgs e)
         {

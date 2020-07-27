@@ -32,6 +32,7 @@
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnSetting = new FontAwesome.Sharp.IconButton();
             this.btnEmployer = new FontAwesome.Sharp.IconButton();
+            this.btnFood = new FontAwesome.Sharp.IconButton();
             this.btnRestaurant = new FontAwesome.Sharp.IconButton();
             this.btnDashboard = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
@@ -60,6 +61,7 @@
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.panelMenu.Controls.Add(this.btnSetting);
             this.panelMenu.Controls.Add(this.btnEmployer);
+            this.panelMenu.Controls.Add(this.btnFood);
             this.panelMenu.Controls.Add(this.btnRestaurant);
             this.panelMenu.Controls.Add(this.btnDashboard);
             this.panelMenu.Controls.Add(this.panelLogo);
@@ -81,7 +83,7 @@
             this.btnSetting.IconColor = System.Drawing.Color.Gainsboro;
             this.btnSetting.IconSize = 32;
             this.btnSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSetting.Location = new System.Drawing.Point(0, 280);
+            this.btnSetting.Location = new System.Drawing.Point(0, 340);
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnSetting.Rotation = 0D;
@@ -105,7 +107,7 @@
             this.btnEmployer.IconColor = System.Drawing.Color.Gainsboro;
             this.btnEmployer.IconSize = 32;
             this.btnEmployer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmployer.Location = new System.Drawing.Point(0, 220);
+            this.btnEmployer.Location = new System.Drawing.Point(0, 280);
             this.btnEmployer.Name = "btnEmployer";
             this.btnEmployer.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnEmployer.Rotation = 0D;
@@ -117,6 +119,30 @@
             this.btnEmployer.UseVisualStyleBackColor = true;
             this.btnEmployer.Click += new System.EventHandler(this.btnEmployer_Click);
             // 
+            // btnFood
+            // 
+            this.btnFood.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFood.FlatAppearance.BorderSize = 0;
+            this.btnFood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFood.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnFood.Font = new System.Drawing.Font("Quicksand", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFood.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnFood.IconChar = FontAwesome.Sharp.IconChar.Hamburger;
+            this.btnFood.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnFood.IconSize = 32;
+            this.btnFood.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFood.Location = new System.Drawing.Point(0, 220);
+            this.btnFood.Name = "btnFood";
+            this.btnFood.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnFood.Rotation = 0D;
+            this.btnFood.Size = new System.Drawing.Size(220, 60);
+            this.btnFood.TabIndex = 7;
+            this.btnFood.Text = "Món Ăn";
+            this.btnFood.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFood.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFood.UseVisualStyleBackColor = true;
+            this.btnFood.Click += new System.EventHandler(this.btnFood_Click);
+            // 
             // btnRestaurant
             // 
             this.btnRestaurant.Dock = System.Windows.Forms.DockStyle.Top;
@@ -125,7 +151,7 @@
             this.btnRestaurant.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnRestaurant.Font = new System.Drawing.Font("Quicksand", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRestaurant.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnRestaurant.IconChar = FontAwesome.Sharp.IconChar.PizzaSlice;
+            this.btnRestaurant.IconChar = FontAwesome.Sharp.IconChar.Utensils;
             this.btnRestaurant.IconColor = System.Drawing.Color.Gainsboro;
             this.btnRestaurant.IconSize = 32;
             this.btnRestaurant.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -353,6 +379,7 @@
         private FontAwesome.Sharp.IconButton btnSetting;
         private FontAwesome.Sharp.IconButton btnEmployer;
         private FontAwesome.Sharp.IconButton btnRestaurant;
+        private FontAwesome.Sharp.IconButton btnFood;
         private System.Windows.Forms.PictureBox btnHome;
         private System.Windows.Forms.Panel panelTitleBar;
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
