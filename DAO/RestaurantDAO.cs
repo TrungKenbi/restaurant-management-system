@@ -21,10 +21,10 @@ namespace DAO
             DataTable data;
             List<Restaurant> list = new List<Restaurant>();
             if (keyword != null) {
-                QUERY = "SELECT * FROM Restaurant WHERE Name LIKE @keyword";
+                QUERY = "SELECT * FROM Restaurant LEFT JOIN RestaurantInfo ON RestaurantInfo.RestaurantId = Restaurant.Id WHERE Restaurant.Name LIKE @keyword";
                 data = DataProvider.GetInstance.ExecuteQuery(QUERY, new object[] { "%" + keyword + "%" });
             } else {
-                QUERY = "SELECT * FROM Restaurant";
+                QUERY = "SELECT * FROM Restaurant LEFT JOIN RestaurantInfo ON RestaurantInfo.RestaurantId = Restaurant.Id";
                 data = DataProvider.GetInstance.ExecuteQuery(QUERY);
             }
             foreach (DataRow item in data.Rows)

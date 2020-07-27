@@ -15,6 +15,10 @@ namespace DTO
         public String Address { get; set; }
         public String Email { get; set; }
         public String Hotline { get; set; }
+        public double Acreage { get; set; }
+        public int Capacity { get; set; }
+        public int Star { get; set; }
+        public int Rating { get; set; }
 
         public double Lat { get; set; }
         public double Lng { get; set; }
@@ -41,6 +45,11 @@ namespace DTO
             Hotline = row["Hotline"].ToString();
             Lat = Convert.ToDouble(row["Lat"]);
             Lng = Convert.ToDouble(row["Lng"]);
+
+            Acreage = Convert.ToDouble(row["Acreage"]);
+            Capacity = Convert.ToInt32(row["Capacity"]);
+            Star = Convert.ToInt32(row["Star"]);
+            Rating = Convert.ToInt32(row["Rating"]);
         }
     }
 }

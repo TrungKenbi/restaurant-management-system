@@ -85,14 +85,23 @@ namespace GUI
 
             // Load data from database to data grid view
             drgvResult.DataSource = RestaurantBUS.Instance.GetList(txtKeyword.Text);
+            
+            drgvResult.Columns["Name"].HeaderText = "Nhà hàng";
+            drgvResult.Columns["Name"].Width = 250;
+            drgvResult.Columns["Acreage"].HeaderText = "Diện tích";
+            drgvResult.Columns["Capacity"].HeaderText = "Sức chứa";
+            drgvResult.Columns["Star"].HeaderText = "Sao";
+            drgvResult.Columns["Rating"].HeaderText = "Đánh giá";
+
+
+
             drgvResult.Columns["Id"].Visible = false;
             drgvResult.Columns["Description"].Visible = false;
-            drgvResult.Columns["Name"].HeaderText = "Nhà Hàng";
-            drgvResult.Columns["Name"].Width = 400;
-            drgvResult.Columns["Description"].HeaderText = "Mô Tả";
-            drgvResult.Columns["Address"].HeaderText = "Địa Chỉ";
-            drgvResult.Columns["Email"].HeaderText = "Email";
-            drgvResult.Columns["Hotline"].HeaderText = "Hotline";
+            drgvResult.Columns["Address"].Visible = false;
+            drgvResult.Columns["Email"].Visible = false;
+            drgvResult.Columns["Hotline"].Visible = false;
+            drgvResult.Columns["Lat"].Visible = false;
+            drgvResult.Columns["Lng"].Visible = false;
         }
 
         private void drgvResult_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

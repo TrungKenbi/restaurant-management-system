@@ -16,7 +16,7 @@ namespace QLDiaDiemNhaHang
         {
             this.restaurant = _restaurant;
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
+            //this.FormBorderStyle = FormBorderStyle.None;
         }
 
         private void FormSearchResult_Load(object sender, EventArgs e)
@@ -26,6 +26,11 @@ namespace QLDiaDiemNhaHang
             this.lblEmail.Text = "Email: " + this.restaurant.Email;
             this.lblHotline.Text = "Hotline: " + String.Format("{0:### ### ####}", this.restaurant.Hotline);
             this.rtbDesc.Text = this.restaurant.Description;
+
+            this.lblAcreage.Text = String.Format("Diện tích: {0} m2", this.restaurant.Acreage);
+            this.lblCapacity.Text = String.Format("Sức chứa: {0} người", this.restaurant.Capacity);
+            this.lblStar.Text = String.Format("Chất lượng: {0} sao", this.restaurant.Star);
+            this.lblRating.Text = String.Format("Đánh giá: {0}/5", this.restaurant.Rating);
 
 
             GMapProviders.GoogleMap.ApiKey = @Properties.Settings.Default.Google_API_KEY;
